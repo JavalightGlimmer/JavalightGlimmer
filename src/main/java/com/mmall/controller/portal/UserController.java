@@ -17,7 +17,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/user/")
 public class UserController {
 
-    @Autowired
+    @Autowired//用这个注解可以不用下获取xml配置文件，根据bean获取对象什么的那一串
     private IUserService iUserService;
     /**
      * 用户登录

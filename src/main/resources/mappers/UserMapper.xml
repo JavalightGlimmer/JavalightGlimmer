@@ -161,7 +161,7 @@
 
   <select id="checkEmail" resultType="int" parameterType="string">
     select count(1) from mmall_user
-    where username = #{email}
+    where email = #{email}
   </select>
 
   <!--这里的baseResultMap映射的User类-->
