@@ -7,16 +7,13 @@ import com.mmall.common.ServerResponse;
 import com.mmall.pojo.Shipping;
 import com.mmall.pojo.User;
 import com.mmall.service.IShippingService;
-import jdk.nashorn.internal.runtime.ConsString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import javax.jnlp.DownloadService2;
 import javax.servlet.http.HttpSession;
-import javax.sql.rowset.serial.SerialRef;
 
 @Controller
 @RequestMapping("/shipping")

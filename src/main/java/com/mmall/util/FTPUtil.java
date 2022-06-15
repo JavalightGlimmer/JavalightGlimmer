@@ -33,7 +33,7 @@ public class FTPUtil {
     public static boolean uploadFile(List<File> fileList) throws IOException {
         FTPUtil ftpUtil = new FTPUtil(ftpIp,21,ftpUser,ftpPass);
         logger.info("开始连接ftp服务器");
-        boolean resuslt = ftpUtil.uploadFile("img",fileList);
+        boolean resuslt = ftpUtil.uploadFile(PropertiesUtil.getProperty("ftp.remotePath"),fileList);
         logger.info("结束上传，上传结果:{}",resuslt);
         return resuslt;
     }
@@ -45,6 +45,10 @@ public class FTPUtil {
         if (connectServer(this.ip,this.port,this.user,this.pwd)){
             try {
                 ftpClient.changeWorkingDirectory(remotePath);
+                /*
+                这个remoetPath，也就是现在我们要传的东西，如果存在这个目录就会切换到这个目录，
+                不存在就默认将传过来的文件存放在根目录。
+                 */
                 ftpClient.setBufferSize(1024);
                 ftpClient.setControlEncoding("UTF-8");
                 ftpClient.setFileType(FTPClient.BINARY_FILE_TYPE);
